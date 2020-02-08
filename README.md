@@ -14,7 +14,13 @@ arg = [[0] * N for _ in range(M)]
 ```
 
 * list comprehensions  
-간단한 함수는 lambda로 만들어 바로 aply 함수로 df에 적용시킬 수 있다. 다중 for문 축약할 수 있는데 더 헷갈리는 것 같다.
+간단한 함수는 lambda로 만들어 바로 aply 함수로 df에 적용시킬 수 있다. 다중 for문도 축약할 수 있는데 더 헷갈리는 것 같다.
 ```python
 dataframe.apply(lambda x: [i for i in x if condition])
 ```
+
+* subprocess
+os.system 대신 subprocess 모듈을 쓰라고 한다. 먼저 둘의 차이는 os.system은 shell command이고 subprocess.call(or subprocess.Popen)은 새로운 프로세서(child process)를 만들어 Poepn 객체와 데이터를 주고받을 수 있다. 그리고 shell에서 작업하는 것은 위험이 있어 피하라고 한다. 간혹 docker를 쓰다 보면 파이썬으로 실행되는 이미지가 있는데 그럴 때 subprocess로 ls 명령어를 쓸 수 있다. 그 외에도 기능이 많아 확인해보면 좋을 것 같다.
+
+
+* ffmpeg
