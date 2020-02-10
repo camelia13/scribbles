@@ -23,4 +23,15 @@ dataframe.apply(lambda x: [i for i in x if condition])
 os.system 대신 subprocess 모듈을 쓰라고 한다. 먼저 둘의 차이는 os.system은 shell command이고 subprocess.call(or subprocess.Popen)은 새로운 프로세서(child process)를 만들어 Poepn 객체와 데이터를 주고받을 수 있다. 그리고 shell에서 작업하는 것은 위험이 있어 피하라고 한다. 간혹 docker를 쓰다 보면 파이썬으로 실행되는 이미지가 있는데 그럴 때 subprocess로 ls 명령어를 쓸 수 있다. 그 외에도 기능이 많아 확인해보면 좋을 것 같다.
 
 
-* ffmpeg
+* ffmpeg  
+ffmpeg는 오디오, 비디오 파일을 변환할 수 있는 command line tool이다. Window, Mac, Linux에서 무료로 이용가능하다. 두 비디오 파일을 합치거나, 비디오에서 오디오만 추출할 때, 비디오에서 프레임을 추출할 때 등에 쓸 수 있다. 
+파이썬에서도 subprocess와 결합하면 ffmpeg를 사용할 수 있다. video에 video 파일 이름, directory에 frame을 저장할 경로를 넣으면 된다. 더 자세한 내용은 https://ffmpeg.org/ 참조
+```python
+pip install ffmpeg 
+ffmpeg_command = ['ffmpeg',
+                 '-i', video,
+                 '-vf', "scale=400:300", # input file
+                 '{0}/%06d.jpg'.format(dirctory)]
+subprocess.call(ffmpeg_command,
+                stdout=subprocess.PIPE stderr=subprocess.PIPE)
+```
