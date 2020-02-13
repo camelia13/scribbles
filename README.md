@@ -46,6 +46,7 @@ subprocess.call(ffmpeg_command,
   
   - No such file or directory java: java  
   java jdk 설치 후 path 설정
-  
-
+ 
+  - cannot import name 'PILLOW_VERSION' from 'PIL'
+  7.0.0 버전 에러있음 ```conda install pillow=6.1```
 
