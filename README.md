@@ -35,3 +35,17 @@ ffmpeg_command = ['ffmpeg',
 subprocess.call(ffmpeg_command,
                 stdout=subprocess.PIPE stderr=subprocess.PIPE)
 ```
+
+* 몇 가지 error
+  - cannot import name 'Optional' from 'torch.jit.annotations' ->   
+  conda install pytorch==1.1.0 torchvision==0.3.0 cudatoolkit=9.0 -c pytorch  
+  본인 cuda version에 맞는 pytorcr 설치. pytorch는 1.1.0 이상이면 무관한듯??  
+
+  - E: Unable to locate package  
+  try ```sudo apt update```
+  
+  - No such file or directory java: java  
+  java jdk 설치 후 path 설정
+  
+
+
