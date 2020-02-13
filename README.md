@@ -50,7 +50,7 @@ subprocess.call(ffmpeg_command,
   - cannot import name 'PILLOW_VERSION' from 'PIL'
   7.0.0 버전 에러있음 ```conda install pillow=6.1```
   
-  - No mudile named 'pycocoevalcap'
+  - No mudile named 'pycocoevalcap'  
   JAVA 설치  
   ```shell
   pip install Cython
