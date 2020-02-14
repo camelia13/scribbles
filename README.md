@@ -57,3 +57,21 @@ subprocess.call(ffmpeg_command,
   pip install git+https://github.com/salaniz/pycocoevalcap
   ```
 
+  - Terminal autocomplete not working
+  ```shell
+  sudo apt-get install bash-completion
+  sudo apt-get install --reinstall bash-completion
+  ```
+  Open your gedit ~/.bashrc and if these content doesn't exist there, add them at the end of it and save it.
+  ```
+  gedit ~/.bashrc
+  
+  # enable bash completion in interactive shells
+  if ! shopt -oq posix; then
+    if [ -f /usr/share/bash-completion/bash_completion ]; then
+    . /usr/share/bash-completion/bash_completion
+   elif [ -f /etc/bash_completion ]; then
+    . /etc/bash_completion
+    fi
+  fi
+```
