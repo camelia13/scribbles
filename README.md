@@ -51,7 +51,7 @@ subprocess.call(ffmpeg_command,
   7.0.0 버전 에러있음 ```conda install pillow=6.1```
   
   - No mudile named 'pycocoevalcap'  
-  JAVA 설치  
+  JAVA 설치([참고](https://www.digitalocean.com/community/tutorials/how-to-install-java-with-apt-on-ubuntu-18-04))
   ```shell
   pip install Cython
   pip install git+https://github.com/salaniz/pycocoevalcap
